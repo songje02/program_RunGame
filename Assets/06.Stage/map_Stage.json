@@ -1,0 +1,44 @@
+{
+  "map_Stage": [
+    {
+      "objectname": "FixObstacle",
+      "x": "4.5",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "MoveObstacle",
+      "x": "10",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "MoveObstacle",
+      "x": "15",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "MoveObstacle",
+      "x": "20",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "MoveObstacle",
+      "x": "25",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "FixObstacle",
+      "x": "30",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "FixObstacle",
+      "x": "36",
+      "y": "-2.7"
+    },
+    {
+      "objectname": "FixObstacle",
+      "x": "43",
+      "y": "-2.7"
+    }
+  ]
+}
