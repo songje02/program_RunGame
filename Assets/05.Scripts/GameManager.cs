@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public UnityEvent UIEvent;
     public UnityEvent GameOverEvent;
     public UnityEvent PlayEvent;
-    public UnityEvent PauseEvent;
 
     public GameObject playBtn;
     public GameObject pauseBtn;
@@ -33,10 +32,7 @@ public class GameManager : MonoBehaviour
 
     public GameState gamestate;
 
-
-    private float timer = 0f;
-    private float scoreInterval = 1f;
-    private float ObstacleInterval = 2f;
+    private float ObstacleInterval = 1.3f;
     private float Obstacletimer = 0f;
 
     public GameObject restartBtn;
@@ -113,7 +109,6 @@ public class GameManager : MonoBehaviour
                 pauseGame();
                 break;
             case GameState.Pause:
-                PauseEvent.Invoke();
                 break;
         }
     }

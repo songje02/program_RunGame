@@ -12,6 +12,7 @@ public class MovePre : MonoBehaviour
 
     void Update()
     {
+        speedUP();
         // 위아래로 이동
         if (movingUp)
         {
@@ -32,5 +33,9 @@ public class MovePre : MonoBehaviour
 
         // 왼쪽으로 이동
         transform.Translate(Vector3.left * speed * Time.deltaTime);
+    }
+    public void speedUP()
+    {
+        speed += 0.005f;
     }
 }
