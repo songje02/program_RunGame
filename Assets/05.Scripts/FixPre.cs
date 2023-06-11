@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FixPre : MonoBehaviour
+public class FixPre : MonoBehaviour //고정형 장애물 이동 스크립트
 {
     public float speed = 5f;
 
@@ -20,6 +20,6 @@ public class FixPre : MonoBehaviour
 
     public void speedUP()
     {
-        speed += 0.005f;
+        speed += 0.01f;
     }
 }

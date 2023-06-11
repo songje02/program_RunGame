@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UiController : MonoBehaviour
+public class UiController : MonoBehaviour //UI 스크립트
 {
     public float timeSpped;
     public GameObject endUI;
     public GameObject restartBtn;
-
-    public bg_Move Ground;
-    public bg_Move Back;
-    public bg_Move Sky;
 
     private float timer = 0f;
     private float numtimer = 0f;
@@ -33,21 +29,14 @@ public class UiController : MonoBehaviour
         endUI.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        Ground.scrollspeed -= timeSpped;
-        Back.scrollspeed -= timeSpped;
-        Sky.scrollspeed -= timeSpped;
-    }
-
-    public void EndUI()
+    public void EndUI() //게임오버일 때 실행되는 UI부분
     {
         endUI.SetActive(true);
         restartBtn.SetActive(true);
         AddScore(score);
         EndRank();
     }
-    public void EndRank()
+    public void EndRank() //랭킹 점수 UI
     {
         for(int i = 0; i < 10; i++)
         {
@@ -55,7 +44,7 @@ public class UiController : MonoBehaviour
         }
     }
 
-    public void numScore()
+    public void numScore() //점수, 점수UI 
     {
         numtimer += Time.deltaTime;
         if (numtimer >= scoreInterval)
@@ -66,7 +55,8 @@ public class UiController : MonoBehaviour
         ScoreText.text = "[SCORE : " + score.ToString() + "]";
     }
 
-    public void LoadScore()
+    //랭킹 점수 
+    public void LoadScore() 
     {
         int saveScore = PlayerPrefs.GetInt("socre", 0);
         score = saveScore;
@@ -106,15 +96,5 @@ public class UiController : MonoBehaviour
             }
         }
         return list;
-    }
-
-    public void speedUP()
-    {
-        timer += Time.deltaTime;
-        if (timer >= scoreInterval)
-        {
-            timeSpped += 0.00003f;
-            timer = 0f;
-        }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class checkCollider : MonoBehaviour
+public class checkCollider : MonoBehaviour //콜라이더 컴포넌트 스크립트
 {
     public GameObject this_val;
     public Vector2 size; 

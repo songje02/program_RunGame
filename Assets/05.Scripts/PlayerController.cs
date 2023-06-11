@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour //플레이어 스크립트
 {
     public checkCollider playerCol;
     public checkCollider groundCol;
@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
         posY = this.gameObject.transform.position.y;
     }
 
-    void Update()
+    void Update() 
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //클릭할 때마다 점프
         {
             if (playerCol.CheckCollision(groundCol))
             {

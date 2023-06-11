@@ -266,9 +266,6 @@ MonoBehaviour:
   timeSpped: 0
   endUI: {fileID: 274914101}
   restartBtn: {fileID: 660875488}
-  Ground: {fileID: 144078360}
-  Back: {fileID: 1725946975}
-  Sky: {fileID: 1709340652}
   RankScore: 
   score: 0
   RankText: {fileID: 1306872903}
@@ -762,33 +759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fe23817c8e9b94b82e0d822dcc10e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 238173401}
-        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
-        m_MethodName: speedUP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 238173401}
-        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
-        m_MethodName: numScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   GameOverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -807,18 +777,6 @@ MonoBehaviour:
   PlayEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 57248308904396024, guid: 8eccaca4970b7cf4da39904eff402e2d, type: 3}
-        m_TargetAssemblyTypeName: FixPre, Assembly-CSharp
-        m_MethodName: playObj
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1747374608}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: playPlayer
@@ -867,9 +825,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 658412409}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Obstacle
+      - m_Target: {fileID: 57248308904396024, guid: 8eccaca4970b7cf4da39904eff402e2d, type: 3}
+        m_TargetAssemblyTypeName: FixPre, Assembly-CSharp
+        m_MethodName: Update
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -879,9 +837,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 57248308904396024, guid: 8eccaca4970b7cf4da39904eff402e2d, type: 3}
-        m_TargetAssemblyTypeName: FixPre, Assembly-CSharp
-        m_MethodName: Update
+      - m_Target: {fileID: 144078360}
+        m_TargetAssemblyTypeName: bg_Move, Assembly-CSharp
+        m_MethodName: speedUP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1725946975}
+        m_TargetAssemblyTypeName: bg_Move, Assembly-CSharp
+        m_MethodName: speedUP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1709340652}
+        m_TargetAssemblyTypeName: bg_Move, Assembly-CSharp
+        m_MethodName: speedUP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 238173401}
+        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
+        m_MethodName: numScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
