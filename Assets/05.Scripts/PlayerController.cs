@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour //플레이어 스크립트
     public checkCollider playerCol;
     public checkCollider groundCol;
 
-    float posY;
+    public float posY;
     bool isJump = false;
 
     void Start()
@@ -15,34 +15,32 @@ public class PlayerController : MonoBehaviour //플레이어 스크립트
         posY = this.gameObject.transform.position.y;
     }
 
-    void Update() 
+    public void playPlayer()
     {
-        if (Input.GetMouseButtonDown(0)) //클릭할 때마다 점프
+        if (Input.GetKeyDown(KeyCode.Space)) //클릭할 때마다 점프
         {
             if (playerCol.CheckCollision(groundCol))
             {
                 isJump = true;
             }
         }
-    }
 
-    public void playPlayer()
-    {
         if (isJump)
         {
-            transform.position = new Vector3(transform.position.x, posY, this.transform.position.z);
-            posY += 0.15f;
-            if (transform.position.y >= 0.5f)
+            transform.position = new Vector3(transform.position.x, posY, transform.position.z);
+            posY += 10f * Time.deltaTime;
+
+            if (transform.position.y >= 0.2f)
             {
                 isJump = false;
             }
         }
-        if (!isJump)
+        else
         {
-            if (transform.position.y >= -1.77)
+            if (transform.position.y >= -1.77f)
             {
-                transform.position = new Vector3(transform.position.x, posY, this.transform.position.z);
-                posY -= 0.08f;
+                transform.position = new Vector3(transform.position.x, posY, transform.position.z);
+                posY -= 8f * Time.deltaTime;
             }
         }
     }

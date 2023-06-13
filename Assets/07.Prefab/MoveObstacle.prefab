@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   this_val: {fileID: 4181896508919582484}
-  size: {x: 0.3, y: 0.5}
+  size: {x: 0.9, y: 1.2}
   objectname: 
 --- !u!114 &-8585308853861740687
 MonoBehaviour:

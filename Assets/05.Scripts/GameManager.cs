@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public enum GameState //게임상태
 {
+    Start,
     Play,
     End,
     Pause
@@ -50,6 +51,13 @@ public class GameManager : MonoBehaviour
     public List<GameObject> ObstaclePool;
     public List<checkCollider> poolCol;
 
+    //타이틀 화면
+    public GameObject Title_bg;
+    public GameObject Title_text;
+    public GameObject Title_startBtn;
+    public GameObject Title_exBtn;
+
+
     //스테이지로더 데이터
     [System.Serializable]
     public class AllData
@@ -66,9 +74,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        playGame(); //재생 버튼 클릭시
+        gamestate = GameState.Start;
 
-        gamestate = GameState.Play;
         //스테이지로더
         datas = JsonUtility.FromJson<AllData>(data.text);
         poolsize = datas.map_Stage.Length;
@@ -100,16 +107,23 @@ public class GameManager : MonoBehaviour
     {
         switch (gamestate)
         {
+            case GameState.Start:
+                break;
             case GameState.Play:
                 PlayEvent.Invoke();
                 break;
             case GameState.End:
                 GameOverEvent.Invoke();
-                pauseGame();
                 break;
             case GameState.Pause:
                 break;
         }
+    }
+
+    public void GameSart()
+    {
+        gamestate = GameState.Play;
+        playGame(); //재생 버튼 클릭시
     }
 
     public void zoneCheck() //화면밖에 나가면 다시 List에 들어가도록
@@ -141,7 +155,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver() //게임오버 체크
+    public void objcolCheck() //게임오버 체크
     {
         for (int i = 0; i < poolsize; i++)
         {
@@ -152,12 +166,18 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void GameOver() //게임오버 체크
+    {
+        Time.timeScale = 0;
+        pauseBtn.SetActive(false);
+        playBtn.SetActive(false);
+    }
 
     public void reStart() //다시 시작시 
     {
         SceneManager.LoadScene("SampleScene");
     }
-        
+
     public void pauseGame() //게임 멈춤 버튼
     {
         gamestate = GameState.Pause;

@@ -10,6 +10,7 @@ public class bg_Move : MonoBehaviour //Ground, Sky, Back 배경 이동 속도 조작
 
     void Start()
     {
+        scrollspeed = -0.1f;
         m_Renderer = GetComponent<Renderer>();
     }
 
@@ -21,6 +22,6 @@ public class bg_Move : MonoBehaviour //Ground, Sky, Back 배경 이동 속도 조작
 
     public void speedUP()
     {
-        scrollspeed -= 0.0005f;
+        scrollspeed -= 0.00001f;
     }
 }
