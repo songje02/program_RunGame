@@ -26,6 +26,7 @@ public class UiController : MonoBehaviour //UI 스크립트
     public GameObject Title_text;
     public GameObject Title_startBtn;
     public GameObject Title_exBtn;
+    public GameObject Title_exitBtn;
 
     //설명 화면
     public GameObject EX_bg;
@@ -52,6 +53,11 @@ public class UiController : MonoBehaviour //UI 스크립트
         restartBtn.SetActive(true);
         AddScore(score);
         EndRank();
+    }
+
+    public void gameExit()
+    {
+        Application.Quit();
     }
 
     public void EndRank()
@@ -82,6 +88,7 @@ public class UiController : MonoBehaviour //UI 스크립트
         Title_text.SetActive(false);
         Title_startBtn.SetActive(false);
         Title_exBtn.SetActive(false);
+        Title_exitBtn.SetActive(false);
         EX_bg.SetActive(false);
         EX_text.SetActive(false);
         EX_startBtn.SetActive(false);
